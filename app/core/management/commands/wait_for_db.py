@@ -17,8 +17,7 @@ class Command(BaseCommand):
             try:
                 # check if db is ready
                 self.check(databases=['default'])
-                db_up = True  # when ready make it true to stop loop
-                # if not ready it throws an error and we handle it except block
+                db_up = True  
             except (Psycopg2Error, OperationalError):
                 self.stdout.write('Database unavailble, please wait 1 sec ...')
                 time.sleep(1)  # wait one second and countine the loop
