@@ -4,7 +4,7 @@ Test for models
 
 from django.test import TestCase
 from django.contrib.auth import get_user_model
-# helper fn in order to get the default user model
+
 
 
 class ModelTest(TestCase):
