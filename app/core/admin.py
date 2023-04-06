@@ -44,6 +44,4 @@ class UserAdmin(BaseUserAdmin):
         }),
     )
 
-# when you register you tell by pass
-# 2nd argument to user the above custom
 admin.site.register(models.User, UserAdmin)
