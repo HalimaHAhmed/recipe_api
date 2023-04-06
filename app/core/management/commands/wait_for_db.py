@@ -9,7 +9,7 @@ class Command(BaseCommand):
     """Django command to wait for database"""
     def handle(self, *args, **options):
         """Entery point for command"""
-        # is print on the terminal we're waiting for db
+
         self.stdout.write('Waiting for database ...')
         # frist time -> db is false
         db_up = False
@@ -17,7 +17,7 @@ class Command(BaseCommand):
             try:
                 # check if db is ready
                 self.check(databases=['default'])
-                db_up = True  
+                db_up = True
             except (Psycopg2Error, OperationalError):
                 self.stdout.write('Database unavailble, please wait 1 sec ...')
                 time.sleep(1)  # wait one second and countine the loop
