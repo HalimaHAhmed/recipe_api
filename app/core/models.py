@@ -1,5 +1,7 @@
+
+
 """
-Database Models.
+Database models
 """
 
 from django.conf import settings
@@ -47,6 +49,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()  # creates instance of the manger
     USERNAME_FIELD = 'email'
 
+
 class Recipe(models.Model):
 
     """
@@ -63,8 +66,8 @@ class Recipe(models.Model):
     description = models.TextField(blank=True)
 
     time_minutes = models.IntegerField()
-    price = models.DecimalField(max_digits=5,decimal_places=2)
-    link = models.CharField(max_length=255,blank=True)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    link = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         return self.title
