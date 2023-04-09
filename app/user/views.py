@@ -4,6 +4,7 @@ from django.shortcuts import render
 views for the user api
 """
 
+# view part
 from rest_framework import generics, authentication,permissions
 
 from rest_framework.authtoken.views import obtain_auth_token
