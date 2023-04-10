@@ -9,39 +9,41 @@ from core import models
 
 class UserAdmin(BaseUserAdmin):
     """Defin the admin pages for users"""
-    ordering=['id']
-    list_display=['email','name']
-    fieldsets=(
-        ('Basic Info',{'fields':('email','password','name')}),
+    ordering = ['id']
+    list_display = ['email', 'name']
+    fieldsets = (
+        ('Basic Info', {'fields': ('email', 'password', 'name')}),
         (
-            _('Permissions'),{
-                'fields':(
+            _('Permissions'), {
+                'fields': (
                     'is_active',
                     'is_staff',
                     'is_superuser'
                 )
             }
         ),
-        (_('Important dates'),{
-            'fields':('last_login',)
+        (_('Important dates'), {
+            'fields': ('last_login',)
         }),
     )
     readonly_fields = ['last_login']
 
     # for add user
     add_fieldsets = (
-        (None,{
-        'classes':('wide',),
-        'fields':(
-        'email',
-        'password1',
-        'password2',
-        'name',
-        'is_active',
-        'is_staff',
-        'is_superuser'
-        )
+        (None, {
+            'classes': ('wide',),
+            'fields': (
+                'email',
+                'password1',
+                'password2',
+                'name',
+                'is_active',
+                'is_staff',
+                'is_superuser'
+            )
         }),
     )
 
+
 admin.site.register(models.User, UserAdmin)
+admin.site.register(models.Recipe)
